@@ -1,0 +1,159 @@
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.container--sm {
+  width: min(100% - 2rem, var(--container-sm));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section--large {
+  padding-block: var(--space-7);
+}
+
+.section--soft {
+  background: var(--color-bg-soft);
+}
+
+.section--muted {
+  background: var(--color-bg-muted);
+}
+
+.section--dark {
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: var(--color-text-inverse);
+}
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: var(--space-4);
+}
+
+.section-header--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-header__eyebrow {
+  display: inline-flex;
+  margin-bottom: var(--space-1);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-header__title {
+  margin-bottom: var(--space-2);
+}
+
+.section-header__text {
+  font-size: var(--text-md);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.stack--large {
+  gap: var(--space-4);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.cluster--between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.grid--2,
+.grid--3,
+.grid--4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.split {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split--wide-left {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .split--wide-right {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}
+
+.full-bleed {
+  width: 100%;
+}
+
+.rounded-block {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-block: var(--space-5);
+  }
+
+  .section--large {
+    padding-block: var(--space-6);
+  }
+}

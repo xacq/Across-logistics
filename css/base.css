@@ -1,0 +1,70 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body:has(.site-nav.is-open) {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+p {
+  color: var(--color-text-muted);
+  max-width: 68ch;
+}
+
+strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+small {
+  font-size: var(--text-sm);
+}
+
+img {
+  height: auto;
+}
+
+::selection {
+  background: var(--brand-red);
+  color: var(--brand-white);
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-red);
+  outline-offset: 4px;
+}

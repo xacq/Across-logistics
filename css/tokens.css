@@ -1,0 +1,66 @@
+:root {
+  --brand-red: #c10230;
+  --brand-graphite: #222222;
+  --brand-white: #ffffff;
+
+  --color-deep-navy: #101828;
+  --color-steel-blue: #425466;
+  --color-soft-stone: #f4f1ec;
+  --color-warm-sand: #e8e1d6;
+  --color-light-silver: #eef0f2;
+  --color-cargo-green: #6f7f5f;
+  --color-muted-clay: #b86b4b;
+
+  --color-bg: var(--brand-white);
+  --color-bg-soft: var(--color-soft-stone);
+  --color-bg-muted: var(--color-light-silver);
+  --color-bg-dark: var(--brand-graphite);
+
+  --color-surface: var(--brand-white);
+  --color-surface-muted: var(--color-light-silver);
+
+  --color-text: var(--brand-graphite);
+  --color-text-muted: var(--color-steel-blue);
+  --color-text-inverse: var(--brand-white);
+
+  --color-primary: var(--brand-graphite);
+  --color-accent: var(--brand-red);
+  --color-secondary: var(--color-steel-blue);
+
+  --color-border: #e5e7eb;
+  --color-border-strong: #d0d5dd;
+
+  --font-sans: Inter, Arial, Helvetica, sans-serif;
+  --font-display: Manrope, Inter, Arial, Helvetica, sans-serif;
+  --font-main: var(--font-sans);
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.15vw, 0.95rem);
+  --text-md: clamp(1rem, 0.95rem + 0.2vw, 1.08rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.35rem);
+  --text-xl: clamp(1.75rem, 1.35rem + 1.4vw, 2.5rem);
+  --text-2xl: clamp(2.5rem, 1.8rem + 3vw, 4.75rem);
+
+  --container: 1200px;
+  --container-sm: 960px;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 16px 40px rgba(34, 34, 34, 0.08);
+  --shadow-medium: 0 20px 60px rgba(34, 34, 34, 0.14);
+
+  --transition-fast: 160ms ease;
+  --transition-base: 240ms ease;
+  --transition-slow: 420ms ease;
+}
