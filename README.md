@@ -28,11 +28,9 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 ├── ecommerce-logistics.html
 ├── assets/
 │   ├── img/
-│   │   ├── hero/
-│   │   │   ├── hero-logistics.jpg
-│   │   │   └── hero-logistics.png
-│   │   └── industries/
-│   │       └── README.md
+│   │   └── hero/
+│   │       ├── hero-logistics.jpg
+│   │       └── hero-logistics.png
 │   └── logos/
 │       └── logo-master.svg
 ├── css/
