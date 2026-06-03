@@ -3648,20 +3648,3 @@
 
 /* =========================
    Service Detail Modifiers
-========================= */
-
-.nav-dropdown__link--active {
-  background: rgba(193, 2, 48, 0.08);
-  color: var(--brand-red);
-}
-
-.service-hero--air,
-.service-hero--ground,
-.service-hero--sea,
-.service-hero--customs,
-.service-hero--warehouse,
-.service-hero--temperature,
-.service-hero--special,
-.service-hero--ecommerce {
-  --service-hero-image: url("../assets/img/hero/hero-logistics.jpg");
-}

@@ -1,0 +1,343 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .wrap { padding: 1.5rem 0; }
+  .section { margin-bottom: 2rem; }
+  .section-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .tree { display: flex; flex-direction: column; gap: 6px; }
+  .nav-item { display: flex; align-items: flex-start; gap: 8px; }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .nav-label { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+  .nav-sub { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+  .sub-list { margin-left: 24px; margin-top: 4px; display: flex; flex-direction: column; gap: 4px; }
+  .sub-item { display: flex; align-items: center; gap: 6px; }
+  .sub-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .sub-label { font-size: 13px; color: var(--color-text-secondary); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.35rem; }
+  .card-body { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 500; }
+  .badge-blue { background: var(--color-background-info); color: var(--color-text-info); }
+  .badge-green { background: var(--color-background-success); color: var(--color-text-success); }
+  .badge-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .badge-danger { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .issue-row { display: flex; gap: 8px; align-items: flex-start; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .issue-row:last-child { border-bottom: none; }
+  .issue-label { font-size: 13px; color: var(--color-text-primary); flex: 1; line-height: 1.5; }
+  .issue-tag { font-size: 11px; color: var(--color-text-secondary); min-width: 60px; margin-top: 1px; }
+  .section-block { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; }
+  .block-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
+  .block-content { font-size: 13px; color: var(--color-text-primary); line-height: 1.6; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .dot-blue { background: #378ADD; }
+  .dot-green { background: #639922; }
+  .dot-amber { background: #BA7517; }
+  .dot-coral { background: #D85A30; }
+  .dot-gray { background: #888780; }
+  .dot-teal { background: #1D9E75; }
+  .dot-purple { background: #7F77DD; }
+  hr { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .mono { font-family: var(--font-mono); font-size: 11px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-secondary); }
+</style>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="section">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+      <div>
+        <div style="font-size:18px; font-weight:500; color:var(--color-text-primary);">Across Logistics — Análisis de contenido</div>
+        <div style="font-size:13px; color:var(--color-text-secondary); margin-top:4px;">acrosslogistics.com · Auditoría pre-rediseño</div>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
+        <span class="badge badge-blue">3 idiomas</span>
+        <span class="badge badge-green">14 oficinas globales</span>
+        <span class="badge badge-warn">7 servicios</span>
+        <span class="badge badge-blue">7 sectores</span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- MAPA DEL SITIO -->
+  <div class="section">
+    <div class="section-title">Mapa del sitio actual</div>
+    <div class="grid-2" style="gap:12px;">
+
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div class="nav-item">
+          <div class="nav-dot dot-blue"></div>
+          <div>
+            <div class="nav-label">Home</div>
+            <div class="nav-sub">Hero slider, servicios, credenciales, sectores, oficinas, sostenibilidad, contacto</div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-amber"></div>
+          <div>
+            <div class="nav-label">Servicios</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Transporte Aéreo</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Transporte Marítimo</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Cargas Especiales</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Carga Temperatura Controlada</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Almacén y Distribución</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">Servicios de Aduanas</span></div>
+              <div class="sub-item"><div class="sub-dot dot-amber"></div><span class="sub-label">e-Commerce</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-coral"></div>
+          <div>
+            <div class="nav-label">Sectores</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Alimentación & Bebidas</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Energías Renovables</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Automoción</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Tecnológico</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Farmacéutico & Sanitario</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Consumo & Distribución</span></div>
+              <div class="sub-item"><div class="sub-dot dot-coral"></div><span class="sub-label">Químico</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div class="nav-item">
+          <div class="nav-dot dot-green"></div>
+          <div>
+            <div class="nav-label">Empresa</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-green"></div><span class="sub-label">Quiénes somos</span></div>
+              <div class="sub-item"><div class="sub-dot dot-green"></div><span class="sub-label">Canal de denuncia</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-teal"></div>
+          <div>
+            <div class="nav-label">Recursos</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-teal"></div><span class="sub-label">FAQ & Recursos</span></div>
+              <div class="sub-item"><div class="sub-dot dot-teal"></div><span class="sub-label">Blog</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-purple"></div>
+          <div>
+            <div class="nav-label">Contacto</div>
+            <div class="nav-sub">Formulario + teléfonos por región</div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-gray"></div>
+          <div>
+            <div class="nav-label">Funciones de acceso</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Tracking (rastreo de envíos)</span></div>
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Área privada (Factorial HR)</span></div>
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Cotización Express</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-dot dot-gray"></div>
+          <div>
+            <div class="nav-label">Legal & Políticas</div>
+            <div class="sub-list">
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Política de Cookies</span></div>
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Política de Privacidad</span></div>
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Política de Calidad</span></div>
+              <div class="sub-item"><div class="sub-dot dot-gray"></div><span class="sub-label">Aviso Legal</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ANÁLISIS DE LA HOMEPAGE -->
+  <div class="section">
+    <div class="section-title">Estructura de la homepage — secciones actuales</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+
+      <div class="section-block">
+        <div class="block-label">1 · Hero slider</div>
+        <div class="block-content">3 slides rotativos con headline genérico + CTA "Solicite su presupuesto ahora". Los textos son intercambiables y no diferencian propuesta de valor entre slides. Video de fondo no accesible como fallback.</div>
+        <div class="tag-row"><span class="badge badge-danger">Propuesta de valor difusa</span><span class="badge badge-warn">CTAs repetidos</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">2 · Quick links flotantes</div>
+        <div class="block-content">5 íconos de acceso rápido: Tracking, Almacén, Marítimo, Aéreo, Contacto. Función útil pero visualmente superpuesta al hero.</div>
+        <div class="tag-row"><span class="badge badge-green">Funcional</span><span class="badge badge-warn">Selección arbitraria de servicios</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">3 · Intro "Soluciones Logísticas integrales"</div>
+        <div class="block-content">Párrafo de presentación general + 5 pilares expandibles (acordeón): Soluciones excepcionales, Integración con cliente, Mejora continua, Envíos urgentes, Network. El primer ítem ya está abierto, los demás requieren clic. Termina con CTA a cotización express.</div>
+        <div class="tag-row"><span class="badge badge-warn">Contenido vago</span><span class="badge badge-warn">Pilares sin datos ni prueba</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">4 · Grid de servicios</div>
+        <div class="block-content">7 servicios con ícono y enlace "+ INFO". Sin descripción ni diferenciador. El orden no refleja prioridad comercial aparente.</div>
+        <div class="tag-row"><span class="badge badge-warn">Sin jerarquía</span><span class="badge badge-warn">Sin descripción</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">5 · Credenciales</div>
+        <div class="block-content">4 acreditaciones: AEO (UE), ISO 9001, IATA, GDP. Cada una con logo y descripción breve. Sección sólida y de alta credibilidad.</div>
+        <div class="tag-row"><span class="badge badge-green">Contenido de alto valor</span><span class="badge badge-blue">Mantener y expandir</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">6 · Cotización Express</div>
+        <div class="block-content">Bloque CTA que redirige a página de formulario aparte. También ofrece "Agendar llamada comercial" con un popup modal.</div>
+        <div class="tag-row"><span class="badge badge-warn">CTA débil — texto genérico</span><span class="badge badge-blue">Modal útil</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">7 · Sectores</div>
+        <div class="block-content">7 sectores en carrusel/slider. Cada uno con etiqueta "Sector", nombre y 1-2 frases. Los textos tienen errores de contenido: el bloque "Alimentación" habla de "cargas remotas" y enlaza a "Renovables"; "Automoción" cita importación/exportación genérica. Inconsistencia clara.</div>
+        <div class="tag-row"><span class="badge badge-danger">Textos cruzados / errores</span><span class="badge badge-danger">Links incorrectos</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">8 · Oficinas globales</div>
+        <div class="block-content">14 ciudades con fotos: Barcelona (HQ), Madrid, Valencia, Gijón, Rotterdam, Amsterdam, Hong Kong, Hangzhou, Shenzhen, Dubái, Oporto, Houston, Dallas, Miami. Sin direcciones, horarios ni datos de contacto directo.</div>
+        <div class="tag-row"><span class="badge badge-green">Señal de presencia global</span><span class="badge badge-warn">Sin info de contacto local</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">9 · Sostenibilidad</div>
+        <div class="block-content">Texto sobre compromiso ecológico y compensación de CO₂. Menciona "proyectos sostenibles" sin nombrarlos. Sin métricas, sin partners, sin certificaciones ambientales.</div>
+        <div class="tag-row"><span class="badge badge-warn">Sin evidencia concreta</span><span class="badge badge-warn">Greenwashing riesgo</span></div>
+      </div>
+
+      <div class="section-block">
+        <div class="block-label">10 · Footer de contacto</div>
+        <div class="block-content">4 teléfonos por región (Europa, Asia, Oriente Medio, EEUU) + lista completa de 14 oficinas con teléfonos locales. Redes sociales: LinkedIn, Facebook, Instagram, Twitter. Email genérico: info@acrosslogistics.com.</div>
+        <div class="tag-row"><span class="badge badge-green">Información completa</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- IDENTIDAD Y POSICIONAMIENTO -->
+  <div class="section">
+    <div class="section-title">Identidad y posicionamiento detectado</div>
+    <div class="grid-2" style="gap:10px;">
+      <div class="card">
+        <div class="card-title">Propuesta de valor declarada</div>
+        <div class="card-body">"Líderes en soluciones logísticas que responden a las más estrictas exigencias de tiempo, coste y sostenibilidad." Sin datos que lo respalden.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Tono de comunicación actual</div>
+        <div class="card-body">Corporativo-neutro. Frases largas, pasiva, vocabulario genérico del sector. Sin voz de marca distinguible.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Diferenciadores implícitos</div>
+        <div class="card-body">Presencia global (14 oficinas), certificaciones de élite (AEO, GDP, IATA, ISO), cobertura multimodal y multiidioma (ES/EN/ZH).</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Público objetivo inferido</div>
+        <div class="card-body">Directores de supply chain, gerentes de logística y responsables de importación/exportación en empresas medianas y grandes. B2B.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Geografía de negocio</div>
+        <div class="card-body">España (HQ Barcelona) con red Europa, Asia-Pacífico, Oriente Medio, EEUU. Fuerte presencia China (3 oficinas).</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Credenciales clave</div>
+        <div class="card-body">AEO (Operador Económico Autorizado UE), IATA, ISO 9001, GDP Farmacéutico. Son activos competitivos muy potentes.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- PROBLEMAS CRÍTICOS -->
+  <div class="section">
+    <div class="section-title">Problemas críticos de contenido detectados</div>
+    <div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.75rem 1.25rem;">
+      <div class="issue-row">
+        <span class="badge badge-danger" style="min-width:50px;">Alto</span>
+        <div class="issue-label"><strong>Textos cruzados en Sectores:</strong> El bloque "Alimentación & Bebidas" enlaza a la página de "Energías Renovables". El de "Automoción" tiene descripción genérica que no habla de automoción.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-danger" style="min-width:50px;">Alto</span>
+        <div class="issue-label"><strong>Propuesta de valor sin respaldo:</strong> Se declaran como "líderes" sin ningún dato (años de experiencia, volumen de envíos, nº clientes, países de cobertura).</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-warn" style="min-width:50px;">Medio</span>
+        <div class="issue-label"><strong>Hero repetitivo:</strong> 3 slides con mensajes casi idénticos y el mismo CTA. No hay progresión de valor ni mensaje diferenciado por audiencia.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-warn" style="min-width:50px;">Medio</span>
+        <div class="issue-label"><strong>Credenciales infrautilizadas:</strong> AEO, GDP e IATA son ventajas competitivas enormes, especialmente en farmacéutico y aduanas. Aparecen una sola vez y sin contexto de por qué importan al cliente.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-warn" style="min-width:50px;">Medio</span>
+        <div class="issue-label"><strong>Sostenibilidad sin evidencia:</strong> Se habla de compensar CO₂ y neutralidad en carbono sin mencionar proyectos concretos, partners ni métricas. Riesgo de greenwashing percibido.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-warn" style="min-width:50px;">Medio</span>
+        <div class="issue-label"><strong>Servicios sin contexto:</strong> La página de servicios es una lista de íconos + título. Sin beneficio, sin proceso, sin caso de uso.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-blue" style="min-width:50px;">Bajo</span>
+        <div class="issue-label"><strong>Falta social proof:</strong> No hay testimonios, logos de clientes, casos de éxito ni cifras de negocio visibles en ninguna parte del sitio.</div>
+      </div>
+      <div class="issue-row">
+        <span class="badge badge-blue" style="min-width:50px;">Bajo</span>
+        <div class="issue-label"><strong>Área privada mal etiquetada:</strong> El enlace "Área privada" usa Factorial HR (software de RRHH), lo que confunde a clientes que buscan un portal de cliente logístico. El tracking usa un sistema diferente (Tenea).</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ACTIVOS DE CONTENIDO VALIOSOS -->
+  <div class="section">
+    <div class="section-title">Activos de contenido valiosos para conservar y potenciar</div>
+    <div class="grid-3" style="gap:8px;">
+      <div class="card">
+        <div class="card-title">Red global de 14 oficinas</div>
+        <div class="card-body">Diferenciador real. Debe tener más protagonismo con mapa interactivo o sección dedicada.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">4 certificaciones de élite</div>
+        <div class="card-body">AEO, IATA, ISO 9001, GDP. Son filtros de decisión para clientes en farmacéutico, aeronáutico y aduanas.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Cobertura multimodal total</div>
+        <div class="card-body">Aéreo + Marítimo + Terrestre + Aduanas + Almacén en una sola empresa. Eso es raro y valioso.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Sitio en 3 idiomas</div>
+        <div class="card-body">ES, EN, ZH. El chino simplificado refleja la importancia de Asia en su negocio.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Cotización Express online</div>
+        <div class="card-body">Herramienta de conversión activa. Debe estar mejor integrada y con más contexto de qué esperar.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Cobertura farmacéutica GDP</div>
+        <div class="card-body">Certificación GDP para cadena de frío y farmacia. Segmento de alto valor, debe tener página propia reforzada.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
