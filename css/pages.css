@@ -1,4 +1,4 @@
-/* Page-specific styles will be added after the header and hero are validated. */
+/* Page-specific styles are grouped by page/section: home sections, footer, contact, quote, services index and service detail pages. */
 /* =========================
    Home Hero
 ========================= */
@@ -3201,34 +3201,467 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Active dropdown link */
+/* =========================
+   Industry Pages
+========================= */
+
+.industry-hero {
+  --industry-hero-image: url("../assets/img/hero/hero-logistics.png");
+
+  position: relative;
+  overflow: hidden;
+
+  padding-block: clamp(4rem, 8vw, 7rem);
+
+  background:
+    radial-gradient(circle at 80% 18%, rgba(193, 2, 48, 0.24), transparent 28rem),
+    linear-gradient(135deg, var(--brand-graphite), var(--color-deep-navy));
+
+  color: var(--brand-white);
+}
+
+.industry-hero__inner {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.industry-hero__content {
+  max-width: 900px;
+}
+
+.industry-hero__eyebrow {
+  display: inline-flex;
+  margin-bottom: var(--space-2);
+
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.industry-hero__title {
+  max-width: 13ch;
+
+  color: var(--brand-white);
+  font-size: clamp(3rem, 8vw, 6.6rem);
+  line-height: 0.94;
+  letter-spacing: -0.075em;
+}
+
+.industry-hero__text {
+  max-width: 720px;
+  margin-top: var(--space-3);
+
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.industry-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  margin-top: var(--space-4);
+}
+
+.industry-hero .btn--ghost,
+.industry-final-cta .btn--ghost {
+  color: var(--brand-white);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.industry-hero .btn--ghost:hover,
+.industry-final-cta .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.industry-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+
+  margin-top: var(--space-4);
+}
+
+.industry-hero__badges span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 34px;
+  padding: 0.45rem 0.75rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-pill);
+
+  color: rgba(255, 255, 255, 0.76);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.industry-hero__visual {
+  position: relative;
+  min-height: 360px;
+  display: none;
+}
+
+.industry-hero__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(135deg, rgba(34, 34, 34, 0.08), rgba(193, 2, 48, 0.18)),
+    var(--industry-hero-image);
+
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.36);
+}
+
+.industry-hero__visual-card {
+  position: absolute;
+  left: -1.5rem;
+  bottom: 2rem;
+
+  display: grid;
+  gap: 0.35rem;
+
+  max-width: 300px;
+  padding: var(--space-2);
+
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--brand-graphite);
+
+  box-shadow: var(--shadow-medium);
+  backdrop-filter: blur(14px);
+}
+
+.industry-hero__visual-card span,
+.industry-capability-card span,
+.related-industry-card span {
+  color: var(--brand-red);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.industry-hero__visual-card strong {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  line-height: 1.2;
+}
+
+@media (min-width: 1080px) {
+  .industry-hero__inner {
+    grid-template-columns: 1fr 0.74fr;
+  }
+
+  .industry-hero__visual {
+    display: block;
+  }
+}
+
+.industry-summary,
+.industry-detail,
+.related-industries {
+  background: var(--color-bg-soft);
+}
+
+.industry-summary__inner,
+.industry-detail__inner,
+.industry-proof__inner {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.industry-summary__content {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.industry-summary__content h2 {
+  max-width: 760px;
+
+  color: var(--brand-graphite);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.industry-summary__content p {
+  color: var(--color-steel-blue);
+  font-size: var(--text-md);
+}
+
+.industry-summary__stats,
+.industry-capabilities__grid,
+.related-industries__grid,
+.industry-proof__certifications {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.industry-summary__stats article,
+.industry-capability-card,
+.related-industry-card,
+.industry-proof__card {
+  display: grid;
+  gap: var(--space-2);
+
+  padding: var(--space-3);
+
+  background: var(--brand-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.industry-summary__stats span {
+  color: var(--brand-red);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.industry-summary__stats p,
+.industry-capability-card p,
+.related-industry-card p,
+.industry-proof__card p {
+  color: var(--color-steel-blue);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+.industry-capabilities,
+.industry-proof {
+  background: var(--brand-white);
+}
+
+.industry-capability-card,
+.related-industry-card {
+  min-height: 220px;
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.industry-capability-card:hover,
+.related-industry-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(193, 2, 48, 0.28);
+  background: var(--brand-white);
+  box-shadow: var(--shadow-medium);
+}
+
+.industry-capability-card--featured {
+  background:
+    radial-gradient(circle at top right, rgba(193, 2, 48, 0.22), transparent 20rem),
+    var(--brand-graphite);
+
+  color: var(--brand-white);
+}
+
+.industry-capability-card h3,
+.related-industry-card h3,
+.industry-proof__card strong {
+  color: var(--brand-graphite);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.industry-capability-card--featured span,
+.industry-capability-card--featured h3,
+.industry-capability-card--featured p {
+  color: var(--brand-white);
+}
+
+.industry-capability-card--featured p {
+  opacity: 0.72;
+}
+
+.industry-detail__panel {
+  display: grid;
+  gap: var(--space-2);
+
+  padding: var(--space-4);
+
+  background:
+    radial-gradient(circle at top right, rgba(193, 2, 48, 0.18), transparent 22rem),
+    var(--brand-graphite);
+
+  color: var(--brand-white);
+  border-radius: var(--radius-lg);
+}
+
+.industry-detail__panel h3 {
+  color: var(--brand-white);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.industry-detail__list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.industry-detail__list li {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(193, 2, 48, 0.72);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+.industry-proof__card span {
+  width: fit-content;
+  padding: 0.5rem 0.75rem;
+
+  border-radius: var(--radius-pill);
+  background: var(--brand-red);
+  color: var(--brand-white);
+
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.industry-final-cta {
+  padding-block: var(--space-6);
+
+  background:
+    radial-gradient(circle at top right, rgba(193, 2, 48, 0.2), transparent 24rem),
+    var(--brand-graphite);
+
+  color: var(--brand-white);
+}
+
+.industry-final-cta__inner {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  text-align: center;
+}
+
+.industry-final-cta span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.industry-final-cta h2 {
+  max-width: 760px;
+
+  color: var(--brand-white);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.industry-final-cta p {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.industry-final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+
+@media (min-width: 760px) {
+  .industry-summary__stats,
+  .industry-capabilities__grid,
+  .related-industries__grid,
+  .industry-proof__certifications {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .industry-summary__inner,
+  .industry-detail__inner,
+  .industry-proof__inner {
+    grid-template-columns: 1fr 0.85fr;
+  }
+
+  .industry-capabilities__grid,
+  .related-industries__grid,
+  .industry-proof__certifications {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.industry-hero--overview {
+  --industry-hero-image: url("../assets/img/hero/hero-logistics.png");
+}
+
+.industry-hero--food {
+  --industry-hero-image: url("../assets/img/industries/food-beverages.jpg");
+}
+
+.industry-hero--renewable {
+  --industry-hero-image: url("../assets/img/industries/renewable-energies.jpg");
+}
+
+.industry-hero--automotive {
+  --industry-hero-image: url("../assets/img/industries/automotive.jpg");
+}
+
+.industry-hero--technology {
+  --industry-hero-image: url("../assets/img/industries/technology.jpg");
+}
+
+.industry-hero--pharma {
+  --industry-hero-image: url("../assets/img/industries/pharmaceutical-healthcare.jpg");
+}
+
+.industry-hero--consumer {
+  --industry-hero-image: url("../assets/img/industries/consumer-distribution.jpg");
+}
+
+.industry-hero--chemicals {
+  --industry-hero-image: url("../assets/img/industries/chemicals.jpg");
+}
+
+
+/* =========================
+   Service Detail Modifiers
+========================= */
 
 .nav-dropdown__link--active {
   background: rgba(193, 2, 48, 0.08);
   color: var(--brand-red);
 }
 
-
-.service-hero--air {
-  --service-hero-image: url("../assets/img/services/air-freight.jpg");
-}
-
-.service-hero--ground {
-  --service-hero-image: url("../assets/img/services/ground-transport.jpg");
-}
-
-.service-hero--sea {
-  --service-hero-image: url("../assets/img/services/sea-freight.jpg");
-}
-
-.service-hero--customs {
-  --service-hero-image: url("../assets/img/services/customs-services.jpg");
-}
-
-.service-hero--customs {
-  --service-hero-image: url("../assets/img/services/customs-services.jpg");
-}
-
-.service-hero--warehouse {
-  --service-hero-image: url("../assets/img/services/warehouse-distribution.jpg");
+.service-hero--air,
+.service-hero--ground,
+.service-hero--sea,
+.service-hero--customs,
+.service-hero--warehouse,
+.service-hero--temperature,
+.service-hero--special,
+.service-hero--ecommerce {
+  --service-hero-image: url("../assets/img/hero/hero-logistics.jpg");
 }

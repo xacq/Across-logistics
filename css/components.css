@@ -139,13 +139,10 @@
 
   border: 0;
   background: transparent;
+  gap: 0.45rem;
   cursor: pointer;
 
   transition: color var(--transition-base);
-}
-
-.nav-menu-trigger {
-  gap: 0.45rem;
 }
 
 .site-nav__link:hover,
