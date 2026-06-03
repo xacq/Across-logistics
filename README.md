@@ -10,6 +10,7 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 ├── contact.html
 ├── quote.html
 ├── industries.html
+├── global-network.html
 ├── food-beverages.html
 ├── renewable-energies.html
 ├── automotive.html
@@ -53,6 +54,7 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 - `contact.html`: página de contacto, regiones, formulario y oficinas.
 - `quote.html`: página para solicitar cotización y seleccionar servicios.
 - `industries.html`: página general de soluciones por sector.
+- `global-network.html`: página general de red global, regiones y oficinas.
 
 ### Páginas de industrias
 
