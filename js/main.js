@@ -1,6 +1,7 @@
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const siteNav = document.querySelector('[data-site-nav]');
 const submenuTriggers = document.querySelectorAll('[data-submenu-trigger]');
+const submenuItems = document.querySelectorAll('.site-nav__item--has-menu');
 const navLinks = document.querySelectorAll('.site-nav a');
 
 const desktopQuery = window.matchMedia('(min-width: 1080px)');
@@ -9,14 +10,21 @@ function isDesktop() {
   return desktopQuery.matches;
 }
 
-function closeSubmenus() {
-  submenuTriggers.forEach((trigger) => {
-    const item = trigger.closest('.site-nav__item--has-menu');
+function setSubmenuState(item, isOpen) {
+  const trigger = item.querySelector('[data-submenu-trigger]');
 
-    if (!item) return;
+  item.classList.toggle('is-submenu-open', isOpen);
 
-    item.classList.remove('is-submenu-open');
-    trigger.setAttribute('aria-expanded', 'false');
+  if (trigger) {
+    trigger.setAttribute('aria-expanded', String(isOpen));
+  }
+}
+
+function closeSubmenus(exceptItem = null) {
+  submenuItems.forEach((item) => {
+    if (item !== exceptItem) {
+      setSubmenuState(item, false);
+    }
   });
 }
 
@@ -51,20 +59,47 @@ submenuTriggers.forEach((trigger) => {
 
     if (isDesktop()) {
       /*
-        Desktop uses hover, not click.
-        This prevents dropdowns from staying anchored after clicking a trigger.
+        Desktop exposes dropdowns through hover and focus-within.
+        Click only refreshes the ARIA state and avoids sticky menus.
       */
+      closeSubmenus(item);
+      setSubmenuState(item, true);
       trigger.blur();
-      closeSubmenus();
       return;
     }
 
-    const isOpen = item.classList.contains('is-submenu-open');
+    const shouldOpen = !item.classList.contains('is-submenu-open');
 
-    closeSubmenus();
+    closeSubmenus(item);
+    setSubmenuState(item, shouldOpen);
+  });
+});
 
-    item.classList.toggle('is-submenu-open', !isOpen);
-    trigger.setAttribute('aria-expanded', String(!isOpen));
+submenuItems.forEach((item) => {
+  item.addEventListener('mouseenter', () => {
+    if (isDesktop()) {
+      closeSubmenus(item);
+      setSubmenuState(item, true);
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (isDesktop()) {
+      setSubmenuState(item, false);
+    }
+  });
+
+  item.addEventListener('focusin', () => {
+    if (isDesktop()) {
+      closeSubmenus(item);
+      setSubmenuState(item, true);
+    }
+  });
+
+  item.addEventListener('focusout', (event) => {
+    if (isDesktop() && !item.contains(event.relatedTarget)) {
+      setSubmenuState(item, false);
+    }
   });
 });
 
@@ -100,19 +135,4 @@ document.addEventListener('click', (event) => {
 desktopQuery.addEventListener('change', () => {
   closeMobileMenu();
   closeSubmenus();
-});
-
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 1080) {
-    closeMobileMenu();
-
-    document.querySelectorAll('.site-nav__item.is-submenu-open').forEach((item) => {
-      item.classList.remove('is-submenu-open');
-    });
-
-    document.querySelectorAll('[data-submenu-trigger]').forEach((trigger) => {
-      trigger.setAttribute('aria-expanded', 'false');
-    });
-  }
 });
