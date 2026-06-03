@@ -9,6 +9,14 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 ├── index.html
 ├── contact.html
 ├── quote.html
+├── industries.html
+├── food-beverages.html
+├── renewable-energies.html
+├── automotive.html
+├── technology.html
+├── pharmaceutical-healthcare.html
+├── consumer-distribution.html
+├── chemicals.html
 ├── air-freight.html
 ├── sea-freight.html
 ├── ground-transport.html
@@ -44,6 +52,17 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 - `index.html`: página de inicio con hero, accesos rápidos, servicios, credenciales, industrias, red global, CTA de cotización y recursos.
 - `contact.html`: página de contacto, regiones, formulario y oficinas.
 - `quote.html`: página para solicitar cotización y seleccionar servicios.
+- `industries.html`: página general de soluciones por sector.
+
+### Páginas de industrias
+
+- `food-beverages.html`: Food & Beverages.
+- `renewable-energies.html`: Renewable Energies.
+- `automotive.html`: Automotive.
+- `technology.html`: Technology.
+- `pharmaceutical-healthcare.html`: Pharmaceutical & Healthcare.
+- `consumer-distribution.html`: Consumer & Distribution.
+- `chemicals.html`: Chemicals.
 
 ### Páginas de servicios
 
@@ -61,10 +80,13 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 - Todas las páginas comparten el mismo `header` global.
 - Todas las páginas comparten el mismo `footer` global.
 - El menú **Services** enlaza con todas las páginas de servicios.
+- El menú **Industries** enlaza con la página general de sectores y las siete páginas individuales de industrias.
 - El dropdown de **Services** funciona en desktop con `hover` y `focus-within`.
 - El dropdown de **Services** funciona en mobile mediante click desde `js/main.js`.
+- El dropdown de **Industries** reutiliza el mismo comportamiento validado de navegación.
 - Los enlaces de servicios en el footer y tarjetas relacionadas apuntan a páginas existentes.
-- Las rutas de CSS, JS, logo e imágenes usadas por CSS apuntan a archivos existentes.
+- Las rutas de CSS, JS y logo apuntan a archivos existentes.
+- Las rutas de imágenes de industrias quedan preparadas en CSS, pero los JPG binarios finales no se incluyen en este PR.
 
 ## CSS
 
@@ -82,6 +104,7 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
   - Contact page.
   - Quote page.
   - Services index/service detail sections.
+  - Industry pages.
   - Service detail modifiers.
 
 ## Pendientes antes de producción
