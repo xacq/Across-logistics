@@ -2699,8 +2699,8 @@
   border-radius: var(--radius-lg);
 
   background:
-    linear-gradient(135deg, rgba(244, 241, 236, 0.18), rgba(255, 255, 255, 0.04)),
-    url("../assets/img/services/air-freight.jpg");
+  linear-gradient(135deg, rgba(244, 241, 236, 0.18), rgba(255, 255, 255, 0.04)),
+  var(--service-hero-image);
 
   background-size: cover;
   background-position: center;
@@ -3206,4 +3206,29 @@
 .nav-dropdown__link--active {
   background: rgba(193, 2, 48, 0.08);
   color: var(--brand-red);
+}
+
+
+.service-hero--air {
+  --service-hero-image: url("../assets/img/services/air-freight.jpg");
+}
+
+.service-hero--ground {
+  --service-hero-image: url("../assets/img/services/ground-transport.jpg");
+}
+
+.service-hero--sea {
+  --service-hero-image: url("../assets/img/services/sea-freight.jpg");
+}
+
+.service-hero--customs {
+  --service-hero-image: url("../assets/img/services/customs-services.jpg");
+}
+
+.service-hero--customs {
+  --service-hero-image: url("../assets/img/services/customs-services.jpg");
+}
+
+.service-hero--warehouse {
+  --service-hero-image: url("../assets/img/services/warehouse-distribution.jpg");
 }
