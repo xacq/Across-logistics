@@ -55,6 +55,7 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 - `quote.html`: página para solicitar cotización y seleccionar servicios.
 - `industries.html`: página general de soluciones por sector.
 - `global-network.html`: página general de red global, regiones y oficinas.
+- `resources.html`: página de recursos logísticos, FAQ y contenido educativo.
 
 ### Páginas de industrias
 
