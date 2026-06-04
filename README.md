@@ -11,7 +11,6 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 ├── quote.html
 ├── industries.html
 ├── global-network.html
-├── resources.html
 ├── food-beverages.html
 ├── renewable-energies.html
 ├── automotive.html
@@ -29,11 +28,9 @@ Proyecto estático en **HTML, CSS y JavaScript puro** para validar la estructura
 ├── ecommerce-logistics.html
 ├── assets/
 │   ├── img/
-│   │   ├── hero/
-│   │   │   ├── hero-logistics.jpg
-│   │   │   └── hero-logistics.png
-│   │   └── industries/
-│   │       └── README.md
+│   │   └── hero/
+│   │       ├── hero-logistics.jpg
+│   │       └── hero-logistics.png
 │   └── logos/
 │       └── logo-master.svg
 ├── css/
